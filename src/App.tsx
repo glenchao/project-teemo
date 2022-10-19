@@ -1,11 +1,12 @@
+import { AppShell, MantineProvider } from "@mantine/core";
 import { useState } from "react";
-import { Text } from "@mantine/core";
 import "./App.css";
-import { MantineProvider } from "@mantine/core";
+import { Header } from "./controls/chrome/Header";
+import { LeftNav } from "./controls/chrome/LeftNav";
 import { AssetForm } from "./controls/forms/asset/AssetForm";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [leftNavIsOpen, setLeftNavIsOpen] = useState<boolean>(false);
 
   return (
     <MantineProvider
@@ -13,7 +14,19 @@ function App() {
       withNormalizeCSS
       theme={{ colorScheme: "dark" }}
     >
-      <AssetForm />
+      <AppShell
+        padding="md"
+        header={
+          <Header
+            leftNavIsOpen={leftNavIsOpen}
+            toggleLeftNav={() => setLeftNavIsOpen(!leftNavIsOpen)}
+          />
+        }
+        navbarOffsetBreakpoint="sm"
+        navbar={<LeftNav isOpen={leftNavIsOpen} />}
+      >
+        <AssetForm />
+      </AppShell>
     </MantineProvider>
   );
 }
