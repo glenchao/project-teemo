@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Text } from "@mantine/core";
 import "./App.css";
 import { MantineProvider } from "@mantine/core";
-import { AssetForm } from "./controls/forms/AssetForm";
+import { AssetForm } from "./controls/forms/asset/AssetForm";
 
 function App() {
   const [count, setCount] = useState(0);
