@@ -10,9 +10,9 @@ export interface IUnitMixProps {
 const headers: ITableHeader<IUnit>[] = [
   { key: "type", title: "Type" },
   { key: "configuration", title: "Configuration" },
+  { key: "quantity", title: "Quantity" },
   { key: "netRentableArea", title: "Net rentable area" },
   { key: "rentPerMonth", title: "Rnet per month" },
-  { key: "quantity", title: "Quantity" },
 ];
 
 export function UnitMix(props: IUnitMixProps) {
