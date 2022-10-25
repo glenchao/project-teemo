@@ -1,12 +1,11 @@
 import { TextInput, Title } from "@mantine/core";
 import { useForm } from "@mantine/form";
-import { IUnitConfig } from "../../../interfaces/IAsset";
+import { IUnit } from "../../../interfaces/IAsset";
 
 export function AssetUnitConfigForm() {
-  const form = useForm<IUnitConfig>();
+  const form = useForm<IUnit>();
   return (
-    <form onSubmit={form.onSubmit((value: IUnitConfig) => console.log(value))}>
-      <Title order={3}>Unit configurations</Title>
+    <form onSubmit={form.onSubmit((value: IUnit) => console.log(value))}>
       <TextInput required label="Name" {...form.getInputProps("name")} />
       <TextInput
         required

@@ -1,14 +1,10 @@
-export interface IUnitConfig {
-  id: string;
-  name: string;
-  description: string;
-}
-
 export interface IUnit {
   id: string;
-  config: IUnitConfig;
+  type: string;
+  configuration: string;
   quantity: number;
   netRentableArea: number;
+  rentPerMonth: number;
 }
 
 export const assetTypes = ["Single family", "Apartment", "Warehouse"] as const;
